@@ -751,6 +751,7 @@ function changeQues(ques){
 function showAnswers(){
   document.getElementById('ques-card-header').hidden = true;
   document.getElementById('ques-card-body').hidden = true;
+  document.getElementById('ques-id').hidden = true;
   let restart = document.createElement('a');
   restart.setAttribute('href', 'index.html');
   restart.classList.add('btn');
@@ -789,8 +790,10 @@ function showAnswers(){
     span1.appendChild(spanText1);
     span2.appendChild(spanText2);
 
-    let cardTitleText = document.createTextNode(bank.results[prevList[i]].question);
-    cardTitle.appendChild(cardTitleText);
+
+    cardTitle.innerHTML = bank.results[prevList[i]].question;
+    // let cardTitleText = document.createTextNode(bank.results[prevList[i]].question);
+    // cardTitle.appendChild(cardTitleText);
     // cardTitle.innerText = bank.results[prevList[i]].question;
 
     cardText.appendChild(span1);
